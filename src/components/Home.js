@@ -113,6 +113,9 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const StyledDiv = styled.div`
+  @media (min-width: 480px) and (max-width: 1000px) and (orientation: landscape) {
+    padding: 5px;
+  }
   max-width: 1000px;
   margin: 0 auto;
   cursor: default;
@@ -138,6 +141,6 @@ const ConfettiContainer = styled.div`
 const H1 = styled.h1`
   font-family: 'Cookie', cursive;
   font-size: 60px;
-  margin-bottom: 0;
+  margin: 0;
   color: #004360;
 `;
