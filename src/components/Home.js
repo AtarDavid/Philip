@@ -18,6 +18,7 @@ export default function Home() {
     }, (x + 1) * 1500);
     setActive(true);
   };
+  // eslint-disable-next-line
   useEffect(throwConfetti, []);
 
   const config = {
