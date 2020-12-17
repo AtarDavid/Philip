@@ -18,8 +18,36 @@ export default function Home() {
     }, (x + 1) * 1500);
     setActive(true);
   };
-  // eslint-disable-next-line
-  useEffect(throwConfetti, []);
+
+  const loadImage = () => {
+    console.log(
+      '%cNeugierig, wa?!',
+      'color: #527397; font-family: sans-serif; font-size: 2.5em; font-weight: bolder; text-shadow: #39597cde 1px 1px 2px;'
+    );
+    const url =
+      'https://cdn.pixabay.com/photo/2016/11/13/21/46/sheep-1822137__340.jpg';
+    var image = new Image();
+
+    image.onload = function () {
+      var style = [
+        `font-size: 1px;`,
+        `line-height: ${this.height * 0.5}px;`,
+        `padding: ${this.height * 0.5}px ${this.width * 0.5}px;`,
+        `background-size: ${this.width}px ${this.height}px;`,
+        `background: url(${url});`,
+        `background: no-repeat url(${url})`,
+      ].join(' ');
+      console.log('%c ', style);
+    };
+
+    image.src = url;
+  };
+
+  useEffect(() => {
+    throwConfetti();
+    loadImage();
+    // eslint-disable-next-line
+  }, []);
 
   const config = {
     angle: (x + 1) * 90,
